@@ -1,26 +1,16 @@
-# Create a dictionary
-person = {
-    "name": "Holiday",
-    "age": 49,
-    "city": "California"
+capital = {
+    "France": "Paris",
+    "Germany": "Berlin",
+    "Italy": "Rome",
+    "Dominican Republic": "Santo Domingo",
+    "Japan": "Tokyo",
+    "USA": "Washington D.C."
 }
 
-# Access a value
-print(person["name"])        # Holiday
+for country, city in sorted(capital.items()):
+    print(f"The capital of {country} is {city}.")
 
-# Add or update
-person["job"] = "Cloud Architect"
+print(f"\nTotal countries: {len(capital)}")
 
-# Delete
-del person["age"]
-
-# Loop through
-for key, value in person.items():
-    print(key, ":", value)
-
-# Check if key exists
-if "city" in person:
-    print("Found it!")
-
-# Get with default (safe - won't crash)
-print(person.get("salary", "Not found"))
+search = input("\nLook up a country: ")
+print(capital.get(search, "Country not found!"))
